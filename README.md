@@ -16,7 +16,7 @@ The root contains only project configuration and this guide. Generated dependenc
 
 ## Project thinking
 
-Read the [author's raw brainstorming notes](docs/raw-notes.txt) for the research questions, business reasoning, original feature ideas, and technical tradeoffs behind Bookly. The notes preserve the author's wording and are separate from the implementation and run instructions below.
+Read the [author's raw brainstorming notes](Bookly/docs/raw-notes.txt) for the research questions, business reasoning, original feature ideas, and technical tradeoffs behind Bookly. The notes preserve the author's wording and are separate from the implementation and run instructions below.
 
 ## Quick start
 
