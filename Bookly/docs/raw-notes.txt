@@ -1,0 +1,69 @@
+AUTHOR'S RAW PROJECT NOTES
+
+These are the author's original brainstorming notes from the project conversation.
+Wording is preserved; line breaks have been normalized for readability. These are
+working notes, rather than claims about the finished implementation or verified
+research findings.
+
+--- Original project notes ---
+
+Steps i did:
+Research what customer experience agents do
+Realized that CX in the pre AI era means something different than we mean now
+Research what current online book stores have for CX agents
+Brainstorm primitives of customer support agents:
+
+Primitive
+Purpose
+Example
+Answer
+Provide information or explain a policy.
+“Standard delivery takes 3–5 business days.”
+Clarify
+Get missing information needed to help.
+“Did the wrong title arrive, or the wrong edition?”
+Acknowledge
+Show understanding of the issue or emotion.
+“That’s frustrating, especially since it was a gift.”
+Confirm
+Check understanding or get authorization before an action.
+“Should I send the replacement to your original address?”
+Act
+Use a tool to inspect or change something.
+Look up tracking, cancel an order, issue a refund.
+Escalate
+Offer or initiate a human handoff.
+“I’ll pass this to our support team with the details we’ve collected.”
+Decline
+Explain a limit and, when possible, offer an alternative.
+“I can’t change an order after dispatch, but I can help arrange a return.”
+Redirect
+Bring an off-topic conversation back into scope.
+“I can help with book recommendations or your order. Which would you like?”
+Close
+End after resolution, disengagement, or a necessary boundary.
+“Your replacement is confirmed. You’re all set.”
+
+I really like how the valon os has a forms tool call to input ssn
+How to beat competitors? Brainstorming
+I mean if i can oneshot an ai agent like this, so can our competitors. So i think we need to have differentiations
+Better integration support - as an SE ill be the first technical point of contact they will see. I should bring in my expertise and give them confidence that our platform is the best because of xyz reasons
+Why is decagon better than competitors?
+Im realizing the differentiator isnt actually in the UI of the CX bot itself, its the stack around building the agent that is the differentiator
+So initially i was thinking about how I can make my chat experience really cool, but now id rather spend more time engineering  things like the admin dashboard, red prompting my agent so it can be defensible, and abstracting the layer beneath the agent.
+I think if we are already having a conversation with the SE, that means the SDR and AE have already identified that the customer already acknowledges the value of having a customer agent - so we are past the point of wowing them with a cool UI or even having some form of AI in their product. Now its more of wowing them about how easy it is
+One thing i dont understand tho: in my opinion, people only buy if they Save money, Make money, Or reduce risk. So im going to research
+Ok saving money makes sense, often times you have to hire many people to answer, and it has to be global or you would just have hours 8-5pm. And thats only assuming these people are calling 8 hours a day - sometimes they are just sitting around which means wasted money for you
+Furthermore, you also need to onboard these employees which takes even more money as your business scales. And not every employee performs the same, sometimes people have bad days
+Making money: upselling, when someone returns something - figuring out why is important and also showing empathy to not lose a customer. This is one is a bit trickier because honestly people are more empathetic than a chatbot - however, if the answer is inaccurate and/or slow - you also risk having a bad customer interaction
+Upselling is also a possibility, when someone inquires about a book for example, the agent can also pull up statistics like similar books that other people have bought / enjoys. Obviously people could just ask an LLM but imagine if this was a clothing store, then similar clothes that people buy together can be recommended, or if this was a restaurant - understanding supply and demand economics of what to order weekly to see what people enjoy eating
+So what am i building
+Yes a chatbot - but lets go deep with the tool calling on looking up an ISBN - that saves genuine time (money) for someone who would have to do that normally
+This is where a form tool call could pop up and you can input that book information
+One interaction branch where a user says theyre looking to buy a new book. This is the clarifying and multi turn part
+Then also we can generate a custom tool called “recommend book” and we preload some basic image covers to show case the books in chat - this is upselling
+Finally ill show a mocked “admin dashboard” where we can show the system prompt, guard rails, a list of tools it can use, a database of the books on hand, and this is where we can show reduce risk as it answers company policies correctly (show a markdown of return policies that the chatbot answers to)
+
+--- Later technical tradeoff note ---
+
+for slide 3 we can say we have a tool look up into company policy and book rather than fine tuning a model. this means it might take a little longer to respond, but it means changing the data quickly like updating a compnay policy, or some new books coming in is really quick
